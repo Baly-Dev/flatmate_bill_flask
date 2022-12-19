@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        .form-label{
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+    </style>
+    <title>Bill</title>
+</head>
+<body>
+
+    <main class="container-fluid p-4">
+        <section>
+            <div>
+                <h2>Bill Page</h2>
+                <p>Fill the form showed below to generate the bill</p>
+            </div>
+        </section>
+        <form method="POST" action="/bill" class="border rounded p-5">
+            
+            <h3>Bill Form</h3>
+            
+            <div class="d-flex gap-3 mb-3">
+                <fieldset class="w-100">
+                    {{bill_form.amount.label(class="form-label")}}
+                    {{bill_form.amount(class="form-control")}}
+                </fieldset>
+                <fieldset class="w-100">
+                    {{bill_form.period.label(class="form-label")}}
+                    {{bill_form.period(class="form-control")}}
+                </fieldset>
+            </div>
+
+            <div class="d-flex gap-3 mb-3">
+                <fieldset class="w-100">
+                    {{bill_form.name_first.label(class="form-label")}}
+                    {{bill_form.name_first(class="form-control")}}
+                </fieldset>
+                <fieldset class="w-100">
+                    {{bill_form.days_first.label(class="form-label")}}
+                    {{bill_form.days_first(class="form-control")}}
+                </fieldset>
+            </div>
+
+            <div class="d-flex gap-3 mb-3">
+                <fieldset class="w-100">
+                    {{bill_form.name_second.label(class="form-label")}}
+                    {{bill_form.name_second(class="form-control")}}
+                </fieldset>
+                <fieldset class="w-100">
+                    {{bill_form.days_second.label(class="form-label")}}
+                    {{bill_form.days_second(class="form-control")}}
+                </fieldset>
+            </div>
+            {{bill_form.submit(class="btn btn-dark")}}
+        </form>
+    </main>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
